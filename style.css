@@ -1,0 +1,43 @@
+.container{
+    margin-top: 20px;
+
+}
+input{
+    justify-content: center;
+}
+#CityInput{
+    width: 600px;
+}
+#btn{
+    width: 75px;
+}
+#WeatherContainer{
+position: absolute;
+top: 50%;
+
+  
+} 
+.icons{
+    display: inline-block;
+    /* float:left; */
+    height: 200px;
+    width: 130px;
+    margin: 20px;
+    color: gray;
+}
+
+.imgClass{
+    height: 90px; 
+}
+.phw{
+    position: absolute;
+    color: gray;
+    left: 55%;
+}
+.icons:hover{
+    background-color: lightgrey;
+    border: 1px solid;
+}
+p{
+    margin-left: 5px;
+}

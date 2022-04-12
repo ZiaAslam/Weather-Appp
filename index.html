@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Weather Api</title>
+</head>
+<body>
+    
+        <div class="container">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button type="button" class="btn btn-outline-secondary  dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search by</button>
+                  <script src="https://kit.fontawesome.com/face1dee64.js" crossorigin="anonymous"></script>
+
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" class="City" href="#">City Name</a>
+                    <a class="dropdown-item" id="CityId" href="#">City Id</a>
+                    <a class="dropdown-item" id="ZipCode" href="#">Zip Code</a>
+     
+                  </div>
+                </div>
+                <input type="text" placeholder="search Item..." id="CityInput">
+  
+                <button id="btn" onclick="GetInfo()"  class="fa-solid fa-magnifying-glass"> </button>
+              </div>
+
+              <h2 id="CityName">Islamabad</h2>
+              <div class="main">
+              <span class="try" id="try1">...</span>
+                <span id="icn"><img src="" class="imgClass" id="icn-img"></span>
+              
+              <span class="phw">
+                <p id="pressure">pressure:</p>
+                <p id="humidity">humidity</p>
+                <p id="wind" id>wind speed</p>
+
+
+               </span>
+              </div>
+              <div id="WeatherContainer">
+               
+
+                  <div id="iconsContainer"  >
+
+                <div class="icons" onclick="GetTemp(0)" >
+                    <p class="weather" id="day1"></p>
+                    <div class="image" ><img src="" class="imgClass" id="img1"></div>
+                    <p class="minValues" id="day1Min">....</p>
+                    <p class="maxValues" id="day1Max">....</p>
+                </div>
+                <div class="icons" onclick="GetTemp(1)">
+                    <p class="weather" id="day2"></p>
+                    <div class="image" ><img src="" class="imgClass" id="img2"></div>
+                    <p class="minValues" id="day2Min">....</p>
+                    <p class="maxValues" id="day2Max">....</p>
+                </div>
+                <div class="icons" onclick="GetTemp(2)">
+                    <p class="weather" id="day3"></p>
+                    <div class="image" ><img src="" class="imgClass" id="img3"></div>
+                    <p class="minValues" id="day3Min">....</p>
+                    <p class="maxValues" id="day3Max">....</p>
+                </div>
+                <div class="icons" onclick="GetTemp(3)">
+                    <p class="weather" id="day4"></p>
+                    <div class="image" ><img src="" class="imgClass" id="img4"></div>
+                    <p class="minValues" id="day4Min">....</p>
+                    <p class="maxValues" id="day4Max">....</p>
+                </div>
+                <div class="icons" onclick="GetTemp(4)">
+                    <p class="weather" id="day5"></p>
+                    <div class="image" ><img src="" class="imgClass" id="img5"></div>
+                    <p class="minValues" id="day5Min">....</p>
+                    <p class="maxValues" id="day5Max">....</p>
+                </div>
+                 </div>
+              
+
+              </div>
+              
+        </div>
+
+  <!-- javascript -->
+<script src="javascript.js">
+</script>
+
+</body>
+</html>
