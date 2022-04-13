@@ -3,9 +3,10 @@ var max_temp = [];
 var icon_image = [];
 
 function GetInfo() {
-    const newName = document.getElementById("CityInput").value;
-    const cityName = document.getElementById("CityName");
-    cityName.innerHTML = newName + " " + ",PK";
+    var newName = document.getElementById("CityInput").value;
+    var cityName = document.getElementById("CityName");
+    cityName.innerHTML = newName;
+    document.getElementById("para").innerHTML = "";
 
     fetch(
         `http://api.openweathermap.org/data/2.5/forecast?q=${newName}&units=metric&appid=c73aa228bfba692462f96e89080aa39a`
@@ -20,21 +21,21 @@ function GetInfo() {
                     "°";
                 document.getElementById("day" + (i + 1) + "Min").innerHTML =
                     minTemp[i];
-            //   for max temp
+                //   for max temp
                 max_temp[i] =
                     "" +
                     Number(data.list[i].main.temp_max, 36.26).toFixed(1) +
                     "°";
                 document.getElementById("day" + (i + 1) + "Max").innerHTML =
                     max_temp[i];
-            //    for icon
+                //    for icon
                 icon_image[i] =
                     "http://openweathermap.org/img/wn/" +
                     data.list[i].weather[0].icon +
                     ".png";
 
                 document.getElementById("img" + (i + 1)).src = icon_image[i];
-            //    for pressure
+                //    for pressure
                 document.getElementById("pressure").innerHTML =
                     "pressure :" + data.list[i].main.pressure + " " + "hPa";
                 // for humidity
@@ -43,11 +44,31 @@ function GetInfo() {
                 //  for wind
                 document.getElementById("wind").innerHTML =
                     "wind speed :" + data.list[i].wind.speed + " " + "m/s";
-            }
 
-        
+                this.checkDay();
+                {
+                    document.getElementById("day" + (i + 1)).innerHTML =
+                        weekday[checkDay(i)];
+                }
+            }
         })
-        .catch((err) => alert("something went wrong"));
+        .catch((err) => {
+            document.getElementById("para").innerHTML = "something went wrong";
+            for (i = 0; i < 5; i++) {
+                document.getElementById("day" + (i + 1) + "Min").innerHTML = "";
+                document.getElementById("day" + (i + 1) + "Max").innerHTML = "";
+                document.getElementById("img" + (i + 1)).src = "";
+                //    for pressure
+                document.getElementById("pressure").innerHTML = "";
+                document.getElementById("humidity").innerHTML = "";
+                //  for wind
+                document.getElementById("wind").innerHTML = "";
+                document.getElementById("day" + (i + 1)).innerHTML = "";
+               
+                document.getElementById("try1").innerHTML = ""
+                document.getElementById("icn-img").src = ""
+            }
+        });
 }
 function GetTemp(a) {
     document.getElementById("try1").innerHTML = minTemp[a];
@@ -72,7 +93,7 @@ function checkDay(day) {
     } else {
         return day + d.getDay();
     }
-}
-for (i = 0; i < 5; i++) {
-    document.getElementById("day" + (i + 1)).innerHTML = weekday[checkDay(i)];
+    // }
+    // for (i = 0; i < 5; i++) {
+    //     document.getElementById("day" + (i + 1)).innerHTML = weekday[checkDay(i)];
 }

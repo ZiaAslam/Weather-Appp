@@ -3,10 +3,11 @@
 
 }
 input{
+    
     justify-content: center;
 }
 #CityInput{
-    width: 600px;
+    width: 45vw;
 }
 #btn{
     width: 75px;
@@ -14,6 +15,7 @@ input{
 #WeatherContainer{
 position: absolute;
 top: 50%;
+
 
   
 } 
@@ -40,4 +42,12 @@ top: 50%;
 }
 p{
     margin-left: 5px;
+}
+#para{
+ 
+    position: absolute;
+    left: 30%;
+    top: 40%;
+    color: purple;
+    font-size: 30px;
 }
